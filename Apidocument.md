@@ -77,7 +77,7 @@ Delete order
 > https://xomato-api.herokuapp.com/deleteOrder
  
 
- update order
+ Update order
  > localhost:6700/updateOrder/61ffab62c39f96bf7ba39676?status=Success
  > https://xomato-api.herokuapp.com/updateOrder/61ffab62c39f96bf7ba39676?status=Success
  > localhost:6700/updateOrder/TEST_95860?status=Success
