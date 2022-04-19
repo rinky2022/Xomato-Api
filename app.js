@@ -22,7 +22,7 @@ app.get('/',(req,res) => {
 
 //location
 app.get('/location',(req,res) => {
-    db.collection('locationdata').find().toArray((err,result) =>{
+    db.collection('state').find().toArray((err,result) =>{
         if(err) throw err;
         res.send(result)
     })
@@ -166,10 +166,12 @@ app.delete('/deleteOrder',(req,res) => {
 })
 
 app.put('/updateOrder/:id',(req,res) => {
-    let oId = mongo.ObjectId(req.params.id)
+    // let oId = mongo.ObjectId(req.params.id)
+    let oId = Number(req.params.id)
     let status = req.query.status?req.query.status:'Pending'
+   
     db.collection('orders').updateOne(
-        {_id:oId},
+        {id:oId},
         {$set:{
             "status":status,
             "bank_name":req.body.bank_name,
